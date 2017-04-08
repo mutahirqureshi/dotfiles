@@ -1,0 +1,17 @@
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
+#export GIT=/usr/local/bin/git
+
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Add Android paths
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+# mount the android file image
+#function mountAndroid { hdiutil attach ~/inforce_android.sparseimage -mountpoint /Volumes/inforce_android; }
+
+#export HOMEBREW_GITHUB_API_TOKEN=46c4a0b0f6bbfd013e2e2fc26e1b00abe7150999

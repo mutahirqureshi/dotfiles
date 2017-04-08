@@ -1,3 +1,7 @@
+[include]
+  # include external gitconfig file (requires git 1.7.10+)
+  # typically, user.name and user.email is configured.
+  path = ~/.gitconfig.local
 [user]
   name = mqureshi
   email = mutahirqureshi@gmail.com
@@ -20,15 +24,15 @@
 [log]
    date = local
 [color]
-    ui = auto
+  ui = auto
 [color "diff"]
-    whitespace = red reverse
+  whitespace = red reverse
 [core]
-    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	editor = vim
 
 [merge]
-	tool = opendiff
+	tool = vimdiff
 #[hub]
 #	host = github.tagged.com
 [credential]
