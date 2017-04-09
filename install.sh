@@ -24,3 +24,11 @@ do
   create_link "$i" "${HOME}/${base/_/.}"
 done
 
+eval "$DIR/git/install.sh"
+
+eval "$DIR/vim/install.sh"
+
+eval "$DIR/prezto/install.zsh"
+
+echo "DONE!"
+

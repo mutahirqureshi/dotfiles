@@ -9,7 +9,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Add Android paths
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin
 
 # mount the android file image
 #function mountAndroid { hdiutil attach ~/inforce_android.sparseimage -mountpoint /Volumes/inforce_android; }
