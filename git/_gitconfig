@@ -3,8 +3,8 @@
   # typically, user.name and user.email is configured.
   path = ~/.gitconfig.local
 [user]
-  name = mqureshi
-  email = mutahirqureshi@gmail.com
+	name = mqureshi
+	email = mutahirqureshi@gmail.com
 [alias]
   ci = commit
   up = update

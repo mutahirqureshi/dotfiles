@@ -11,6 +11,14 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin
 
+# FZF with ripgrep
+# --files: List files that would be searched but do not search
+# --no-ignore: Do not respect .gitignore, etc...
+# --hidden: Search hidden files and folders
+# --follow: Follow symlinks
+# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
 # mount the android file image
 #function mountAndroid { hdiutil attach ~/inforce_android.sparseimage -mountpoint /Volumes/inforce_android; }
 
