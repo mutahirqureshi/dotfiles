@@ -5,6 +5,7 @@
 ```brew install hub```
 ```brew cask install iterm2```
 ```brew install ripgrep```
+```brew install direnv```
 
 ### Setup
 1. ```cd ~```
