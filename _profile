@@ -28,3 +28,10 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 #function mountAndroid { hdiutil attach ~/inforce_android.sparseimage -mountpoint /Volumes/inforce_android; }
 
 #export HOMEBREW_GITHUB_API_TOKEN=46c4a0b0f6bbfd013e2e2fc26e1b00abe7150999
+
+#google-mac
+brewprefix=$HOME/homebrew
+export PATH="$brewprefix/bin:$brewprefix/sbin:$PATH"
+export MANPATH="$brewprefix/share/man:$MANPATH"
+export LD_LIBRARY_PATH=$HOME/homebrew/lib:$LD_LIBRARY_PATH
+unset brewprefix
