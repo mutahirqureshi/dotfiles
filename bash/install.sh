@@ -2,10 +2,10 @@
 
 set -e
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-echo "bash DIR=$DIR"
+BASH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "BASH=$BASH"
 
-. ../funcs.sh
+. $ROOT/funcs.sh
 
-create_links "$DIR"
+create_links "$BASH"
 

@@ -2,12 +2,12 @@
 
 set -e
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-echo "DIR=$DIR"
+export ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "ROOT=$ROOT"
 
-. ./funcs.sh
+. $ROOT/funcs.sh
 
-create_links "$DIR"
+create_links "$ROOT"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo apt-get install -y xsel
@@ -15,11 +15,15 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   brew install reattach-to-user-namespace
 fi
 
-eval "$DIR/git/install.sh"
+eval "$ROOT/git/install.sh"
 
-eval "$DIR/vim/install.sh"
+eval "$ROOT/vim/install.sh"
 
-eval "$DIR/prezto/install.zsh"
+eval "$ROOT/tmux/install.sh"
+
+eval "$ROOT/prezto/install.zsh"
+
+unset ROOT
 
 echo "DONE!"
 

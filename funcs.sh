@@ -1,13 +1,18 @@
 
+function timestamp {
+  date +"%Y-%m-%d_%H-%M-%S"
+}
+
 function create_link {
   source="$1"
   target="$2"
+  ts=$(timestamp)
 
   printf "linking %s to %s..." $source $target
 
   if [ -e $target ]; then
-    printf "moving already existing %s to %s.bak..." $target $target
-    mv "$target" "${target}.bak"
+    printf "moving already existing %s to %s.%s.bak..." $target $target $ts
+    mv "$target" "${target}.${ts}.bak"
   fi
 
   ln -s $source $target

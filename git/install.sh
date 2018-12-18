@@ -2,6 +2,11 @@
 
 set -e
 
+GIT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "GIT=$GIT"
+
+. $ROOT/funcs.sh
+
 git config --global include.path '~/.gitconfig.local'
 
 git config --global user.name 'Muhammad Qureshi'
@@ -42,7 +47,4 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   git config --global credential.helper osxkeychain
 fi
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-echo "git DIR=$DIR"
-
-create_links "$DIR"
+create_links "$GIT"
