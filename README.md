@@ -7,6 +7,8 @@
 ```brew install ripgrep```
 ```brew install direnv```
 
+https://github.com/languitar/pass-git-helper
+
 ### Setup
 1. ```cd ~```
 2. ```git clone <repo url> dotfiles```
