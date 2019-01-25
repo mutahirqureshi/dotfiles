@@ -1,0 +1,3 @@
+To override global git config entries, add them to ~/.gitconfig.local
+See .gitconfig.local.template for an eg.
+

@@ -7,8 +7,6 @@ echo "GIT=$GIT"
 
 . $ROOT/funcs.sh
 
-git config --global include.path '~/.gitconfig.local'
-
 git config --global user.name 'Muhammad Qureshi'
 git config --global user.email mutahirqureshi@gmail.com
 
@@ -46,5 +44,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   git config --global credential.helper osxkeychain
 fi
+
+git config --global include.path '~/.gitconfig.local'
 
 create_links "$GIT"
