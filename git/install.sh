@@ -5,10 +5,9 @@ set -e
 GIT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "GIT=$GIT"
 
-. $ROOT/funcs.sh
+. $GIT/../funcs.sh
 
-git config --global user.name 'Muhammad Qureshi'
-git config --global user.email mutahirqureshi@gmail.com
+backup "$HOME/.gitconfig"
 
 git config --global core.whitespace 'fix,-indent-with-non-tab,trailing-space,cr-at-eol'
 git config --global core.excludesfile '~/.gitignore_global'
