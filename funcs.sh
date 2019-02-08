@@ -5,7 +5,11 @@ function timestamp {
 
 function backup {
   file="$1"
-  if [ -e "$file" ]; then
+
+  if [ -L "$file" ]; then
+    printf "removing existing symlink: %s..." $file
+    unlink "$file"
+  elif [ -e "$file" ]; then
     ts=$(timestamp)
     printf "moving already existing %s to %s.%s.bak..." $file $file $ts
     mv "$file" "${file}.${ts}.bak"
@@ -21,7 +25,7 @@ function create_link {
 
   backup "$target"
 
-  ln -s $source $target
+  ln -sf $source $target
   printf "DONE!\n"
 }
 

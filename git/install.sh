@@ -8,6 +8,7 @@ echo "GIT=$GIT"
 . $GIT/../funcs.sh
 
 backup "$HOME/.gitconfig"
+printf "DONE!\n"
 
 git config --global core.whitespace 'fix,-indent-with-non-tab,trailing-space,cr-at-eol'
 git config --global core.excludesfile '~/.gitignore_global'

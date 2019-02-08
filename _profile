@@ -1,5 +1,11 @@
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
+# Source .profile.local if it exists
+if [[ -s "$HOME/.profile.local" ]]; then
+  source "$HOME/.profile.local"
+fi
+
+
 #export GIT=/usr/local/bin/git
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
