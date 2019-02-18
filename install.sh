@@ -21,6 +21,8 @@ eval "$ROOT/vim/install.sh"
 
 eval "$ROOT/tmux/install.sh"
 
+eval "$ROOT/bash/install.sh"
+
 eval "$ROOT/prezto/install.zsh"
 
 unset ROOT
