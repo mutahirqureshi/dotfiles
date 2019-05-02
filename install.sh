@@ -23,6 +23,8 @@ eval "$ROOT/tmux/install.sh"
 
 eval "$ROOT/bash/install.sh"
 
+eval "$ROOT/kitty/install.sh"
+
 eval "$ROOT/prezto/install.zsh"
 
 unset ROOT
