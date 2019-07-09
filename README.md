@@ -6,6 +6,7 @@
 ```brew cask install iterm2```
 ```brew cask install kitty```
 ```brew install ripgrep```
+```brew install fd```
 ```brew tap homebrew/cask-fonts && brew cask install font-fira-code```
 
 ### Setup
