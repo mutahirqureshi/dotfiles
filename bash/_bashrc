@@ -1,6 +1,7 @@
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
 
 [[ -s "$HOME/.bashrc.local" ]] && source "$HOME/.bashrc.local"
 
