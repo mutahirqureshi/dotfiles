@@ -20,6 +20,7 @@ git config --global color.diff.whitespace 'red reverse'
 git config --global push.default simple
 
 git config --global log.date local
+git config --global log.mailmap true
 
 git config --global merge.tool vimdiff
 
