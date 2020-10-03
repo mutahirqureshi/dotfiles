@@ -9,11 +9,11 @@ echo "ROOT=$ROOT"
 
 create_links "$ROOT"
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  sudo apt-get install -y xsel
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  brew install reattach-to-user-namespace
-fi
+#if [[ "$OSTYPE" == "linux-gnu" ]]; then
+#  sudo apt-get install -y xsel
+#elif [[ "$OSTYPE" == "darwin"* ]]; then
+#  brew install reattach-to-user-namespace
+#fi
 
 eval "$ROOT/git/install.sh"
 
