@@ -17,6 +17,8 @@ git config --global core.editor vim
 git config --global color.ui auto
 git config --global color.diff.whitespace 'red reverse'
 
+git config --global pull.rebase true
+
 git config --global push.default simple
 
 git config --global log.date local
