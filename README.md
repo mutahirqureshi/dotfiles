@@ -8,6 +8,8 @@
 ```brew install fzf```
 ```brew install ripgrep```
 ```brew install fd```
+```brew install vim```
+```brew install zsh```
 ```brew tap homebrew/cask-fonts && brew cask install font-fira-code```
 ```brew install reattach-to-user-namespace``` OR ```sudo pacman -S xsel```
 ## X Server
@@ -21,4 +23,4 @@
 2. ```git clone <repo url> dotfiles```
 3. ```cd dotfiles```
 4. ```git submodule update --init --recursive```
-5. ```./install.sh```
+5. ```bash install.sh```

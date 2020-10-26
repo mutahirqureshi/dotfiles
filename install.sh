@@ -15,17 +15,17 @@ create_links "$ROOT"
 #  brew install reattach-to-user-namespace
 #fi
 
-eval "$ROOT/git/install.sh"
+bash "$ROOT/git/install.sh"
 
-eval "$ROOT/vim/install.sh"
+bash "$ROOT/vim/install.sh"
 
-eval "$ROOT/tmux/install.sh"
+bash "$ROOT/tmux/install.sh"
 
-eval "$ROOT/bash/install.sh"
+bash "$ROOT/bash/install.sh"
 
-eval "$ROOT/kitty/install.sh"
+bash "$ROOT/kitty/install.sh"
 
-eval "$ROOT/prezto/install.zsh"
+zsh "$ROOT/prezto/install.zsh"
 
 unset ROOT
 

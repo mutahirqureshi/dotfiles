@@ -1,5 +1,5 @@
 
-alias git=hub
+#alias git=hub
 
 # Source .aliases.local if it exists
 if [[ -s "$HOME/.aliases.local" ]]; then
