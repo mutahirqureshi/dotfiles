@@ -1,5 +1,7 @@
 
 alias git=hub
-alias crow=/google/data/ro/teams/mobile_eng_prod/crow/crow.par
-alias pastebin="/google/src/head/depot/eng/tools/pastebin"
 
+# Source .aliases.local if it exists
+if [[ -s "$HOME/.aliases.local" ]]; then
+  source "$HOME/.aliases.local"
+fi
