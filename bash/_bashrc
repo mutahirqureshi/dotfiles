@@ -1,7 +1,23 @@
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
+# set up FZF autocompletion and shell bindings
+if [[ -f ~/.fzf.bash ]]; then
+  source ~/.fzf.bash
+elif [[ -f /usr/share/fzf/completion.bash ]]; then
+  source /usr/share/fzf/completion.bash
+elif [[ -f /usr/share/doc/fzf/examples/completion.bash ]]; then
+  source /usr/share/doc/fzf/examples/completion.bash
+else
+  echo "fzf completion.bash not found\n"
+fi
+
+if [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]]; then
+  source /usr/share/doc/fzf/examples/key-bindings.bash
+elif [[ -f /usr/share/fzf/key-bindings.bash ]]; then
+  source /usr/share/fzf/key-bindings.bash
+else
+  echo "fzf key-bindings.bash not found\n"
+fi
 
 [[ -s "$HOME/.bashrc.local" ]] && source "$HOME/.bashrc.local"
 
