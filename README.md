@@ -24,3 +24,4 @@
 3. ```cd dotfiles```
 4. ```git submodule update --init --recursive```
 5. ```bash install.sh```
+6. ```$(brew --prefix)/opt/fzf/install```
