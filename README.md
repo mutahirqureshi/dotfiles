@@ -10,6 +10,7 @@
 ```brew install fd```
 ```brew install vim```
 ```brew install zsh```
+```brew install tmux```
 ```brew tap homebrew/cask-fonts && brew cask install font-fira-code```
 ```brew install reattach-to-user-namespace``` OR ```sudo pacman -S xsel```
 ## X Server
