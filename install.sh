@@ -25,6 +25,8 @@ bash "$ROOT/bash/install.sh"
 
 bash "$ROOT/kitty/install.sh"
 
+bash "$ROOT/keyboard/install.sh"
+
 zsh "$ROOT/prezto/install.zsh"
 
 unset ROOT

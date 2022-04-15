@@ -4,3 +4,6 @@
 [submodule "prezto"]
 	path = prezto
 	url = https://github.com/mutahirqureshi/prezto.git
+[submodule "keyboard/macos/Capslock"]
+	path = keyboard/macos/Capslock
+	url = https://github.com/Vonng/Capslock.git
