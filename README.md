@@ -1,6 +1,7 @@
 # dotfiles
 
 ### Dependencies
+```xcode-select --install```
 ```brew install git```
 ```brew install hub```
 ```brew cask install iterm2```
@@ -11,6 +12,7 @@
 ```brew install vim```
 ```brew install zsh```
 ```brew install tmux```
+```brew install yq```
 ```brew tap homebrew/cask-fonts && brew cask install font-fira-code```
 ```brew install reattach-to-user-namespace``` OR ```sudo pacman -S xsel```
 ## X Server
