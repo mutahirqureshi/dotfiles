@@ -4,8 +4,8 @@
 ```xcode-select --install```
 ```brew install git```
 ```brew install hub```
-```brew cask install iterm2```
-```brew cask install kitty```
+```brew install iterm2 --cask```
+```brew install kitty --cask```
 ```brew install fzf```
 ```brew install ripgrep```
 ```brew install fd```
