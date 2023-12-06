@@ -8,8 +8,6 @@ else
     source /usr/share/fzf/completion.bash
   elif [[ -f /usr/share/doc/fzf/examples/completion.bash ]]; then
     source /usr/share/doc/fzf/examples/completion.bash
-  else
-    echo "fzf completion.bash not found\n"
   fi
 
   if [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]]; then
