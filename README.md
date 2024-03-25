@@ -28,3 +28,4 @@
 4. ```git submodule update --init --recursive```
 5. ```bash install.sh```
 6. ```$(brew --prefix)/opt/fzf/install```
+7. (Linux only) Install keyd from https://github.com/rvaiya/keyd. See config file in keyd/default.conf
