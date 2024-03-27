@@ -43,7 +43,7 @@ git config --global alias.sta stash
 git config --global alias.sdiff !git-svn-diff
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  git config --global credential.helper '!pass-git-helper $@'
+  git config --global credential."https://github.com".helper '!pass Personal/Github/local_helper'
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   git config --global credential.helper osxkeychain
 fi

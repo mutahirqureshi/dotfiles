@@ -1,3 +1,7 @@
 To override global git config entries, add them to ~/.gitconfig.local
 See .gitconfig.local.template for an eg.
 
+To set up git credential helper for Github, create a pass entry:
+pass insert -m Personal/Github/local_helper
+username=mutahirqureshi
+password=<Personal access token from Github>
