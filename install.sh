@@ -25,6 +25,10 @@ bash "$ROOT/bash/install.sh"
 
 bash "$ROOT/kitty/install.sh"
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  bash "$ROOT/karabiner/install.sh"
+fi
+
 bash "$ROOT/keyboard/install.sh"
 
 zsh "$ROOT/prezto/install.zsh"
