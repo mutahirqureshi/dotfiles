@@ -6,10 +6,14 @@
 README.md
 AGENTS.md
 **/README.md
+**/*.md
+**/*.mdx
 bash/
 git/
 tmux/
 vim/
 prezto/
-keyboard/macos/Capslock/
+keyboard/
+rectangle/
+iterm2/
 keyd/
