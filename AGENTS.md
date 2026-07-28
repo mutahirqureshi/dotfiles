@@ -33,36 +33,38 @@ Files in the repo map to $HOME paths directly:
 - `.gitconfig` → `~/.gitconfig`
 - `.config/kitty/kitty.conf` → `~/.config/kitty/kitty.conf`
 - `.config/sway/config` → `~/.config/sway/config`
+- `.config/karabiner/assets/complex_modifications/*.json` → `~/.config/karabiner/assets/complex_modifications/*.json`
 
 Platform-specific content is handled via Go templates and `run_` scripts in `.chezmoi/`.
 
 ## Platform differences
 
-- **macOS**: karabiner, Rectangle, CapsLock setup handled by `run_pre_*.sh` scripts.
-- **Linux**: keyd config installed to `/etc/keyd/default.conf` via `run_pre_keyd.sh` (requires sudo).
+- **macOS**: karabiner assets (in .config/karabiner), Rectangle config, iTerm2 theme, CapsLock build
+- **Linux**: keyd config copied to `/etc/keyd/default.conf` (requires sudo)
 
 ## Key subdirectories
 
-| Directory | Purpose |
-|-----------|---------|
-| `vim/` | Vim config submodule (mq-vim), plugins managed by vim-plug |
-| `prezto/` | Zsh framework submodule |
-| `git/` | Git config (.gitconfig.local is local-only, gitignored in .gitignore) |
-| `kitty/` | Kitty terminal (managed via .config path now) |
-| `karabiner/` | macOS keyboard remapping (assets moved to .config/karabiner/) |
-| `keyd/` | Linux key remapping (config copied to /etc/keyd/ on Linux) |
-| `sway/` | Sway Wayland compositor config |
-| `android_studio/` | Android Studio config |
-| `iterm2/` | iTerm2 color profiles |
-| `rectangle/` | macOS window management config |
+| Directory | Purpose | Status |
+|-----------|---------|--------|
+| `vim/` | Vim config submodule (mq-vim), plugins managed by vim-plug | Excluded from chezmoi |
+| `prezto/` | Zsh framework submodule | Excluded from chezmoi |
+| `git/` | Git config (.gitconfig.local is local-only, gitignored in .gitignore) | Mostly empty |
+| `android_studio/` | Android Studio config | Managed by chezmoi (if dot-prefixed) |
+| `iterm2/` | iTerm2 color profile | Excluded from chezmoi, handled by run script |
+| `rectangle/` | macOS window management config | Excluded from chezmoi, handled by run script |
+| `keyd/` | Linux key remapping config | Excluded from chezmoi, handled by run script |
 
 ## chezmoi run scripts
 
 Files in `.chezmoi/` with `run_` prefix are executed by chezmoi on applies:
-- `run_onchange_prezto.sh` — links prezto runcoms and .zprezto, sets zsh as default shell
-- `run_once_vim_plugins.sh` — runs vim-plug upgrade/clean/update
-- `run_pre_rectangle.sh` — copies RectangleConfig.json (macOS only)
-- `run_pre_keyd.sh` — copies keyd default.conf to /etc/keyd/ (Linux only, sudo)
+
+| Script | Runs | Description |
+|--------|------|-------------|
+| `run_onchange_prezto.sh` | on change | Links prezto runcoms and .zprezto, sets zsh as default shell |
+| `run_once_vim_plugins.sh` | once | Runs vim-plug upgrade/clean/update |
+| `run_pre_rectangle.sh` | on apply | Copies RectangleConfig.json (macOS only) |
+| `run_pre_keyd.sh` | on apply | Copies keyd default.conf to /etc/keyd/ (Linux only, sudo) |
+| `run_pre_iterm2.sh` | on apply | Imports iTerm2 Solarized-Black theme (macOS only) |
 
 ## Important env vars
 
@@ -77,4 +79,4 @@ Files in `.chezmoi/` with `run_` prefix are executed by chezmoi on applies:
 
 ## Submodule note
 
-Submodules (vim, prezto, keyboard/macos/Capslock) are excluded from chezmoi's source state via `.chezmoiignore`. Their own install scripts are no longer used — chezmoi manages the linking, and run scripts handle submodule-specific setup.
+Submodules (vim, prezto, keyboard/macos/Capslock) are excluded from chezmoi's source state via `.chezmoiignore`. Their own install.sh scripts are removed — chezmoi manages the linking, and run scripts handle submodule-specific setup.
