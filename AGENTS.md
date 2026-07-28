@@ -2,7 +2,7 @@
 
 ## Repo type
 
-Dotfiles repo managed by chezmoi with git submodules for prezto and CapsLock.
+Dotfiles repo managed by chezmoi with git submodules for prezto.
 
 ## Setup
 
@@ -40,7 +40,7 @@ Platform-specific content is handled via Go templates and `run_` scripts in `.ch
 
 ## Platform differences
 
-- **macOS**: karabiner assets (in .config/karabiner), Rectangle config, iTerm2 theme, CapsLock build
+- **macOS**: karabiner assets (in .config/karabiner), Rectangle config, iTerm2 theme, CapsLock JSON config
 - **Linux**: keyd config copied to `/etc/keyd/default.conf` (requires sudo)
 
 ## Key subdirectories
@@ -76,4 +76,4 @@ vim plugin management is handled by vim-plug bootstrap in `.vimrc` — auto-inst
 
 ## Submodule note
 
-Submodules (prezto, keyboard/macos/Capslock) are excluded from chezmoi's source state via `.chezmoiignore`. Their own install scripts are removed — chezmoi manages the linking, and run scripts handle submodule-specific setup.
+The `prezto` submodule is excluded from chezmoi's source state via `.chezmoiignore`. Its own install.zsh is removed — chezmoi manages the linking, and `run_onchange_prezto.sh` handles prezto-specific setup.
