@@ -1,0 +1,49 @@
+[core]
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	color.ui = auto
+	color.diff.whitespace = red reverse
+
+[pull]
+	ff = only
+
+[push]
+	default = simple
+
+[log]
+	date = local
+	mailmap = true
+
+[merge]
+	tool = vimdiff
+
+[alias]
+	ci = commit
+	up = update
+	st = status
+	br = branch
+	co = checkout
+	di = diff
+	lg = log --graph --decorate
+	gl = log -p
+	glp = log --graph --oneline --abbrev-commit --decorate
+	rl = reflog
+	llog = log --date=local
+	ol = log --oneline
+	w = whatchanged
+	sta = stash
+	sdiff = !git-svn-diff
+
+[include]
+	path = ~/.gitconfig.local
+
+[diff]
+	colorMoved = default
+
+[credential]
+{{- if eq .chezmoi.os "darwin" }}
+	helper = osxkeychain
+{{- else if eq .chezmoi.os "linux" }}
+	"https://github.com".helper = "!pass Personal/Github/local_helper"
+{{- end }}
