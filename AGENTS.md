@@ -2,13 +2,12 @@
 
 ## Repo type
 
-Dotfiles repo managed by chezmoi with git submodules for prezto.
+Dotfiles repo managed by chezmoi with chezmoi external for prezto.
 
 ## Setup
 
 ```bash
 cd ~ && git clone <repo url> dotfiles && cd dotfiles
-git submodule update --init --recursive
 chezmoi apply
 ```
 
@@ -16,12 +15,12 @@ Or use the Makefile:
 
 ```bash
 make setup       # full setup (submodules + dotfiles)
-make update      # pull + submodules + chezmoi apply
+make update      # pull + chezmoi apply
 make dry-run     # preview changes
 ```
 
-- Submodules must be initialized before `chezmoi apply` — some run scripts depend on submodule content.
 - chezmoi config lives at `~/.config/chezmoi/chezmoi.toml` (not in the repo).
+- Chezmoi external repos are downloaded during `chezmoi apply` (see `.chezmoiexternal.toml`).
 - vim-plug auto-bootstraps on first vim open — no manual install step needed.
 
 ## How chezmoi manages files
@@ -47,12 +46,15 @@ Platform-specific content is handled via Go templates and `run_` scripts in `.ch
 
 | Directory | Purpose | Status |
 |-----------|---------|--------|
-| `prezto/` | Zsh framework submodule | Excluded from chezmoi |
 | `git/` | Git config (.gitconfig.local is local-only, gitignored in .gitignore) | Mostly empty |
 | `android_studio/` | Android Studio config | Managed by chezmoi (if dot-prefixed) |
 | `iterm2/` | iTerm2 color profile | Excluded from chezmoi, handled by run script |
 | `rectangle/` | macOS window management config | Excluded from chezmoi, handled by run script |
 | `keyd/` | Linux key remapping config | Excluded from chezmoi, handled by run script |
+
+## Chezmoi external repos
+
+Prezto is managed as an external repo (`.chezmoiexternal.toml`) and downloaded during `chezmoi apply`. The `run_onchange_prezto.sh` script handles linking runcoms, `.zprezto`, and setting zsh as the default shell.
 
 ## chezmoi run scripts
 
@@ -73,7 +75,3 @@ vim plugin management is handled by vim-plug bootstrap in `.vimrc` — auto-inst
 - `JAVA_HOME` auto-detected per platform
 - `ANDROID_HOME` set to `$HOME/Library/Android/sdk` (macOS)
 - RVM loaded via `~/.rvm/scripts/rvm`
-
-## Submodule note
-
-The `prezto` submodule is excluded from chezmoi's source state via `.chezmoiignore`. Its own install.zsh is removed — chezmoi manages the linking, and `run_onchange_prezto.sh` handles prezto-specific setup.

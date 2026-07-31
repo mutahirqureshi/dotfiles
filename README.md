@@ -43,7 +43,6 @@
 1. ```cd ~```
 2. ```git clone <repo url> dotfiles```
 3. ```cd dotfiles```
-4. ```git submodule update --init --recursive```
-5. ```bash install.sh```
-6. ```$(brew --prefix)/opt/fzf/install```
-7. (Linux only) Install keyd from https://github.com/rvaiya/keyd. See config file in keyd/default.conf
+4. ```chezmoi apply```
+5. ```$(brew --prefix)/opt/fzf/install```
+6. (Linux only) Install keyd from https://github.com/rvaiya/keyd. See config file in keyd/default.conf
