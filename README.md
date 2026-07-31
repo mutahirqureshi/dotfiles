@@ -26,6 +26,8 @@
 
 ```brew install yq```
 
+```brew install chezmoi```
+
 ```brew install --cask font-fira-code```
 
 ## X Server
