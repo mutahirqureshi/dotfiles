@@ -3,6 +3,8 @@
 **/install.sh
 **/install.zsh
 **/funcs.sh
+Makefile
+android_studio
 README.md
 AGENTS.md
 **/*.md
