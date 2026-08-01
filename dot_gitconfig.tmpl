@@ -48,6 +48,4 @@
 [credential]
 {{- if eq .chezmoi.os "darwin" }}
 	helper = osxkeychain
-{{- else if eq .chezmoi.os "linux" }}
-	"https://github.com".helper = "!pass Personal/Github/local_helper"
 {{- end }}
