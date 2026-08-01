@@ -49,3 +49,5 @@
 5. ```chezmoi apply```
 6. ```$(brew --prefix)/opt/fzf/install```
 7. (Linux only) Install keyd from https://github.com/rvaiya/keyd. See config file in keyd/default.conf
+
+`chezmoi init` automatically detects `.chezmoi.toml.tmpl` in the repo and uses it to generate the config file with the correct `sourceDir`.
