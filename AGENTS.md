@@ -58,7 +58,7 @@ Prezto is managed as an external repo (`.chezmoiexternal.toml`) and downloaded d
 
 ## chezmoi run scripts
 
-Files in `.chezmoi/` with `run_` prefix are executed by chezmoi on applies:
+Files at the root of the source directory with `run_` prefix are executed by chezmoi on applies:
 
 | Script | Runs | Description |
 |--------|------|-------------|

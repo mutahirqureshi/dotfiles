@@ -5,9 +5,9 @@ set -e
 PREZTO="${HOME}/.zprezto"
 
 if [[ ! -d "${PREZTO}/runcoms" ]]; then
-  printf "prezto submodule not initialized at %s\n" "${PREZTO}"
-  printf "run 'git submodule update --init --recursive' first\n"
-  return 1 2>/dev/null || exit 1
+  printf "prezto not found at %s\n" "${PREZTO}"
+  printf "chezmoi external may not have been cloned yet; skipping\n"
+  exit 0
 fi
 
 setopt EXTENDED_GLOB

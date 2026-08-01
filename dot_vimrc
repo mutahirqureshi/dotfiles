@@ -1,7 +1,16 @@
 " vim-plug bootstrap: auto-install plug.vim on first run
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+let s:data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(s:data_dir . '/autoload/plug.vim'))
+  let s:plug_url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  let s:plug_dest = expand(s:data_dir . '/autoload/plug.vim')
+  call mkdir(expand(s:data_dir . '/autoload'), 'p', 0o755)
+  if executable('curl')
+    silent execute '!curl -fLo ' . s:plug_dest . ' --create-dirs ' . s:plug_url
+  elseif executable('wget')
+    silent execute '!wget -qO ' . s:plug_dest . ' ' . s:plug_url
+  else
+    echoerr 'Cannot install vim-plug: neither curl nor wget found. Please install one and restart vim.'
+  endif
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 

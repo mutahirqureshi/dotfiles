@@ -1,24 +1,20 @@
-.PHONY: setup full-setup update submodules dry-run prezto vim-plugins fzf clean
+.PHONY: setup full-setup update dry-run clean chezmoi-init
 
-submodules:
-	git submodule update --init --recursive
-
-setup: submodules
+setup:
 	chezmoi apply
 
-full-setup: submodules
+full-setup:
 	chezmoi apply --verbose
 
 update:
 	git pull
-	git submodule update --init --recursive
 	chezmoi apply
 
 dry-run:
 	chezmoi apply --dry-run --verbose
 
 clean:
-	chezmoi forget --recurse-submodules
+	chezmoi forget
 
 chezmoi-init:
 	chezmoi init --source=$(shell pwd)
