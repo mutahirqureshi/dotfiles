@@ -1,3 +1,4 @@
 [".zprezto"]
 type = "git-repo"
 url = "https://github.com/mutahirqureshi/prezto.git"
+refreshPeriod = "168h"
