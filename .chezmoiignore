@@ -1,19 +1,9 @@
-.git
-**/.git
-**/install.sh
-**/install.zsh
-**/funcs.sh
-Makefile
 android_studio
 README.md
 AGENTS.md
 **/*.md
-**/*.mdx
-bash/
-git/
 tmux/
 rectangle/
-iterm2/
 keyd/
 {{- if eq .chezmoi.os "darwin" }}
 dot_config/sway
