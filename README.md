@@ -6,6 +6,8 @@
 
 ```brew install git```
 
+```brew install curl```
+
 ```brew install hub```
 
 ```brew install iterm2 --cask```
@@ -39,6 +41,10 @@
 ```sudo pacman -S wl-clipboard```
 
 ```yay -S wl-clipboard-x11```
+
+## Linux (Debian/Ubuntu)
+
+```sudo apt install git curl fzf ripgrep fd-find vim zsh tmux```
 
 ### Setup
 

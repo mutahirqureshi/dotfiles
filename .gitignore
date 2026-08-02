@@ -1,1 +1,6 @@
 *.swp
+.gitconfig.local
+.profile.local
+.bashrc.local
+.aliases.local
+.zshrc.local
