@@ -45,8 +45,8 @@
 1. ```cd ~```
 2. ```git clone <repo url> dotfiles```
 3. ```cd dotfiles```
-4. ```chezmoi init --source .```
-5. ```chezmoi apply```
+4. ```chezmoi init --apply --refresh-externals --source .```
+5. ```chsh -s $(which zsh)```
 6. ```$(brew --prefix)/opt/fzf/install```
 7. (Linux only) Install keyd from https://github.com/rvaiya/keyd. See config file in keyd/default.conf
 
