@@ -30,6 +30,8 @@
 
 ```brew install chezmoi```
 
+```brew install git-delta```
+
 ```brew install --cask font-fira-code```
 
 ## X Server

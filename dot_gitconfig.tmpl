@@ -1,51 +1,89 @@
 [core]
-	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	excludesfile = ~/.gitignore_global
-	editor = vim
-
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore_global
+    editor = vim
+    pager = delta
 [color]
-	ui = auto
-
+    ui = auto
 [color "diff"]
-	whitespace = red reverse
-
-[pull]
-	ff = only
-
-[push]
-	default = simple
-
-[log]
-	date = local
-	mailmap = true
-
-[merge]
-	tool = vimdiff
-
-[alias]
-	ci = commit
-	up = update
-	st = status
-	br = branch
-	co = checkout
-	di = diff
-	lg = log --graph --decorate
-	gl = log -p
-	glp = log --graph --oneline --abbrev-commit --decorate
-	rl = reflog
-	llog = log --date=local
-	ol = log --oneline
-	w = whatchanged
-	sta = stash
-	sdiff = !git-svn-diff
-
-[include]
-	path = ~/.gitconfig.local
-
+    whitespace = red reverse
 [diff]
-	colorMoved = default
-
+    colorMoved = default
+[pull]
+    ff = only
+[push]
+    default = simple
+[log]
+    date = local
+    mailmap = true
+[merge]
+    tool = vimdiff
+    conflictStyle = zdiff3
+[alias]
+    ci = commit
+    up = update
+    st = status
+    br = branch
+    co = checkout
+    di = diff
+    sdi = -c delta.features=side-by-side diff  # side-by-side diff
+    lg = log --graph --decorate
+    gl = log -p
+    glp = log --graph --oneline --abbrev-commit --decorate
+    rl = reflog
+    llog = log --date=local
+    ol = log --oneline
+    w = whatchanged
+    sta = stash
+[credential "https://github.com"]
+    helper =
+    helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+    helper =
+    helper = !/usr/bin/gh auth git-credential
 [credential]
 {{- if eq .chezmoi.os "darwin" }}
-	helper = osxkeychain
+    helper = osxkeychain
 {{- end }}
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    dark = true
+    line-numbers = true
+    navigate = true    # use n and N to move between files
+    syntax-theme = gruvbox-dark
+
+    # --- Hard Dark Gruvbox Base Palette ---
+    # Background (#1d2021), Panel Background (#282828), Muted Gray (#928374)
+    # Plus/Minus tints are precisely calculated for high-contrast visibility.
+
+    minus-style = syntax "#3c1f1e"           # Hard dark red tint
+    minus-non-current-style = syntax "#1d2021"
+    minus-emphasized-style = syntax "#6c2927" # High-contrast inline removal
+
+    plus-style = syntax "#223519"            # Hard dark green tint
+    plus-non-current-style = syntax "#1d2021"
+    plus-emphasized-style = syntax "#446232"  # High-contrast inline addition
+
+    # --- Line Numbers (High Contrast) ---
+    line-numbers-minus-style = "#fb4934" bold # Gruvbox Bright Red
+    line-numbers-plus-style = "#b8bb26" bold  # Gruvbox Bright Green
+    line-numbers-zero-style = "#928374"       # Gruvbox Gray
+
+    # Clean formats to optimize screen real estate in side-by-side mode
+    line-numbers-left-format = "{nm:^4} │ "
+    line-numbers-right-format = "{np:^4} │ "
+
+    # --- Side-by-Side Border & Column Styling ---
+    # Uses Gruvbox Dark Gray (#504945) for the center divider line
+    wrap-max-lines = unlimited
+    side-by-side-line-number-separator-style = "#504945"
+
+    # --- File & Hunk Headers ---
+    file-style = "#fabd2f" bold              # Gruvbox Bright Yellow
+    file-decoration-style = "#fabd2f" ul     # Underlined file path
+
+    hunk-header-style = "#fe8019"            # Gruvbox Bright Orange
+    hunk-header-decoration-style = "#3c3836" box # Subtle outer frame for clarity
+[include]
+    path = ~/.gitconfig.local
