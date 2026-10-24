@@ -51,6 +51,7 @@
 ### Setup
 
 1. ```cd ~```
+2. ```rm .vim```
 2. ```git clone <repo url> dotfiles```
 3. ```cd dotfiles```
 4. ```chezmoi init --apply --refresh-externals --source .```
